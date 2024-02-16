@@ -33,9 +33,9 @@ module location: [modules/wy_vpc](modules/wy_vpc)
 | project_name            | terraform_aws_vpc                                        |
 | env_prefix              | test                                                     |
 | vpc_cidr                | "10.90.0.0/16"                                           |
-| azs                     | It will create automatically available az in region      |
-| public_subnet_cidr      | depends on you numbers of cidr block                     |
-| private_subnet_cidr     | depends on you numbers of cidr block                     |
+| azs                     | It will use automatically available AZs in region        |
+| public_subnet_cidr      | depends on your numbers of cidr block                     |
+| private_subnet_cidr     | depends on your numbers of cidr block                     |
 | create_nat              | False                                                    |
 | public_subnet_for_nat   | 0 (means: it will create in the first public subnet)     |
 
