@@ -2,10 +2,12 @@
 variable "project_name" {
   description = "Project Name"
   type        = string
+  default = "terraform_aws_vpc"
 }
 variable "env_prefix" {
   description = "Environment Prefix"
   type        = string
+  default = "test"
 }
 variable "vpc_cidr" {
   description = "VPC CIDR"
