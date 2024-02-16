@@ -4,7 +4,7 @@ Can use this vpc module for EC2, EKS, ECS and more.
 vpc module in modules/wy_vpc  
 <code>github.com/wwwaiyan/terraform-aws-vpc/modules/wy_vpc</code>  
 ## example usage: 
-```
+```hcl
 module "vpc" {
   source             = "github.com/wwwaiyan/terraform-aws-vpc/modules/wy_vpc"
   project_name       = var.project_name
