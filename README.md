@@ -18,10 +18,9 @@ in this case I will create vpc with root module
 - 2 Private Subnets with NAT Gateway in each vpc  
 
 Run <code>terraform plan</code> and <code>terraform apply</code> Commands  
-we can check terraform state with <code>terraform refresh</code> command
+we can check terraform state with <code>terraform refresh</code> command  
 ![Image](./screenshots/vpc-terraform-refresh.png)
-Can check in vpc resource map in aws console
-refresh</code> command
+Can check in vpc resource map in aws console  
 ![Image](./screenshots/vpc-resource-map.png)
 
 ## Module input and output  
@@ -45,4 +44,4 @@ module location: [modules/wy_vpc](modules/wy_vpc)
 - all of public subnets ids
 - all of private subnets ids
 
-> Can adjust input and output value in <code>variable.tf</code> and <code>output.tf</code>
+> Can adjust input and output values in <code>variable.tf</code> and <code>output.tf</code>
