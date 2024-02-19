@@ -12,7 +12,7 @@ module "vpc" {
   public_subnet_cidr = ["10.90.1.0/24", "10.90.2.0/24"]
 }
 ```
-in this case I will create vpc with root module
+In this case, it will create eks cluster with root module  
 - 2 VPC
 - 2 Public Subnets with IGW in each vpc
 - 2 Private Subnets with NAT Gateway in each vpc  
