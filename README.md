@@ -1,27 +1,7 @@
-# terraform_aws_vpc
-This repo is created for vpc and subnets creation with terraform.   
-Can use this vpc module for EC2, EKS, ECS and more.  
-vpc module in modules/wy_vpc  
-<code>github.com/wwwaiyan/terraform-aws-vpc/modules/wy_vpc</code>  
-## example usage: 
-```hcl
-module "vpc" {
-  source             = "github.com/wwwaiyan/terraform-aws-vpc/modules/wy_vpc"
-  project_name       = var.project_name
-  env_prefix         = var.env_prefix
-  public_subnet_cidr = ["10.90.1.0/24", "10.90.2.0/24"]
-}
-```
-In this case, it will create eks cluster with root module  
-- 2 VPC
-- 2 Public Subnets with IGW in each vpc
-- 2 Private Subnets with NAT Gateway in each vpc  
+<h2 align="center">terraform_aws_vpc 🚀</h2>
+<p align="center">This repo is created for vpc and subnets creation with terraform. </p>  
 
-Run <code>terraform plan</code> and <code>terraform apply</code> Commands  
-we can check terraform state with <code>terraform refresh</code> command  
-![Image](./screenshots/vpc-terraform-refresh.png)
-Can check in vpc resource map in aws console  
-![Image](./screenshots/vpc-resource-map.png)
+>💡 Can use this vpc module for EC2, EKS, ECS and more.   
 
 ## Module input and output  
 module location: [modules/wy_vpc](modules/wy_vpc)
@@ -34,8 +14,8 @@ module location: [modules/wy_vpc](modules/wy_vpc)
 | env_prefix              | test                                                     |
 | vpc_cidr                | "10.90.0.0/16"                                           |
 | azs                     | It will use automatically available AZs in region        |
-| public_subnet_cidr      | depends on your numbers of cidr block                     |
-| private_subnet_cidr     | depends on your numbers of cidr block                     |
+| public_subnet_cidr      | depends on your numbers of cidr block                    |
+| private_subnet_cidr     | depends on your numbers of cidr block                    |
 | create_nat              | False                                                    |
 | public_subnet_for_nat   | 0 (means: it will create in the first public subnet)     |
 
@@ -45,3 +25,51 @@ module location: [modules/wy_vpc](modules/wy_vpc)
 - all of private subnets ids
 
 > Can adjust input and output values in <code>variable.tf</code> and <code>output.tf</code>
+## example usage: 
+```hcl
+module "vpc1" {
+  source                = "github.com/wwwaiyan/terraform-aws-vpc/modules/wy_vpc"
+  project_name          = var.project_name
+  env_prefix            = var.env_prefix1
+  vpc_cidr              = var.vpc_cidr1
+  public_subnet_cidr    = var.public_subnet_cidr1
+  private_subnet_cidr   = var.private_subnet_cidr1
+  create_nat            = var.create_nat #required public_subnet_cidr
+  public_subnet_for_nat = var.public_subnet_for_nat
+  azs                   = var.azs
+}
+module "vpc2" {
+  source                = "github.com/wwwaiyan/terraform-aws-vpc/modules/wy_vpc"
+  project_name          = var.project_name
+  env_prefix            = var.env_prefix2
+  vpc_cidr              = var.vpc_cidr2
+  public_subnet_cidr    = var.public_subnet_cidr2
+  private_subnet_cidr   = var.private_subnet_cidr2
+  create_nat            = var.create_nat #required public_subnet_cidr
+  public_subnet_for_nat = var.public_subnet_for_nat
+  azs                   = var.azs
+}
+```
+### 1. Clone the repo  
+```
+git clone https://github.com/wwwaiyan/terraform-aws-vpc.git
+```  
+can edit the values in `variable.tf` or `main.tf`  
+### 2. Run `terraform init` and `terraform apply` Command  
+we can check terraform state with `terraform state list` command  
+
+In this case, it will create eks cluster with root module  
+✔️ Created 2 VPC  
+✔️ Created 2 Public Subnets with IGW in each vpc  
+✔️ Created 2 Private Subnets with NAT Gateway in each vpc   
+
+Can check vpc resource map in aws console  
+![Image](./screenshots/vpc-resource-map.png)  
+
+## screenshots: 
+![Image](./screenshots/vpc-terraform-state-list.png)  
+
+### 3. Cleanup your resources.  
+Run `terraform destroy` command.  
+
+<H3 align="center">Happy Coding! Happy Clustering... 🌟🚀😊</H3>

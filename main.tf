@@ -5,7 +5,7 @@ module "vpc1" {
   vpc_cidr              = var.vpc_cidr1
   public_subnet_cidr    = var.public_subnet_cidr1
   private_subnet_cidr   = var.private_subnet_cidr1
-  create_nat            = var.create_nat #if you want to create nat gateway for private subnet, you need to set public_subnet_cidr
+  create_nat            = var.create_nat #required public_subnet_cidr
   public_subnet_for_nat = var.public_subnet_for_nat
   azs                   = var.azs
 }
@@ -16,7 +16,7 @@ module "vpc2" {
   vpc_cidr              = var.vpc_cidr2
   public_subnet_cidr    = var.public_subnet_cidr2
   private_subnet_cidr   = var.private_subnet_cidr2
-  create_nat            = var.create_nat #if you want to create nat gateway for private subnet, you need to set public_subnet_cidr
+  create_nat            = var.create_nat #required public_subnet_cidr
   public_subnet_for_nat = var.public_subnet_for_nat
   azs                   = var.azs
 }
