@@ -50,12 +50,15 @@ module "vpc2" {
   azs                   = var.azs
 }
 ```
-### 1. Clone the repo  
+### 1. Clone the repo and Go to the module directory 
 ```
-git clone https://github.com/wwwaiyan/terraform-aws-vpc.git
+git clone https://github.com/wwwaiyan/terraform-aws-vpc.git && cd terraform-aws-vpc
 ```  
 can edit the values in `variable.tf` or `main.tf`  
 ### 2. Run `terraform init` and `terraform apply` Command  
+```
+terraform init && terraform apply
+```
 we can check terraform state with `terraform state list` command  
 
 In this case, it will create eks cluster with root module  
