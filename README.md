@@ -75,4 +75,4 @@ Can check vpc resource map in aws console
 ### 3. Cleanup your resources.  
 Run `terraform destroy` command.  
 
-<H3 align="center">Happy Coding! Happy Clustering... 🌟🚀😊</H3>
+<H3 align="center">Happy Coding!🌟🚀😊</H3>
