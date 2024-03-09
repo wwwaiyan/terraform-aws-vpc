@@ -61,7 +61,7 @@ terraform init && terraform apply
 ```
 we can check terraform state with `terraform state list` command  
 
-In this case, it will create eks cluster with root module  
+In this case, VPC and Subnets are created using the root module, which includes the following resources:  
 ✔️ Created 2 VPC  
 ✔️ Created 2 Public Subnets with IGW in each vpc  
 ✔️ Created 2 Private Subnets with NAT Gateway in each vpc   
